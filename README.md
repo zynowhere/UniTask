@@ -11,11 +11,11 @@
 
 # 简介
 
-👯✨😄📫
 
-联通手机营业厅自动完成每日任务，领流量、签到获取积分等，月底流量不发愁。
 
-开源不易，如果本项目对你有帮助，那么就请给个star吧。😄
+联通手机营业厅自动完成每日任务
+
+
 
 # 目录
 
@@ -23,12 +23,6 @@
 - [目录](#目录)
 - [功能](#功能)
 - [使用方式](#使用方式)
-  - [Github Actions（推荐）](#github-actions推荐)
-    - [1.fork本项目](#1fork本项目)
-    - [2.准备需要的参数](#2准备需要的参数)
-    - [3.将参数填到Secrets](#3将参数填到secrets)
-    - [4.开启Actions](#4开启actions)
-    - [5.进行一次push操作](#5进行一次push操作)
   - [腾讯云函数（推荐）](#腾讯云函数推荐)
     - [1.fork本项目](#1fork本项目-1)
     - [2.准备需要的参数](#2准备需要的参数-1)
@@ -56,75 +50,6 @@
 
 # 使用方式
 
-## Github Actions（推荐）
-
-### 1.fork本项目
-
-项目地址：[srcrs/UnicomTask](https://github.com/srcrs/UnicomTask)
-
-![](https://draw-static.vercel.app/UnicomTask/fork本项目.gif)
-
-### 2.准备需要的参数
-
-手机号、服务密码、`appId`。
-
-其中`appId`的获取:
-
-+ 安卓用户可在文件管理 --> `Unicom/appid` 文件中获取。
-
-+ 苹果用户可抓取客户端登录接口获取。
-
-> `https://m.client.10010.com/mobileService/login.htm`（解绑重新登录，在响应体中）
-
-> `https://m.client.10010.com/mobileService/onLine.htm`（退出客户端重新进入，在请求体中）
-
-> `http://m.client.10010.com/mobileService/customer/getclientconfig.htm?appId=xxx&mobile=yyy`（退出客户端重新进入，xxx就是）
-
-> `https://m.client.10010.com/mobileService/customer/accountListData.htm`（退出客户端重新进入，在请求体中）
-
-其中，后三个链接在安卓也是适用的。
- 
-### 3.将参数填到Secrets
-
-在`Secrets`中的`Name`和`Value`格式如下：
-
-Name | Value
--|-
-USERS_COVER | config.json中内容
-
-将`config.json`中内容复制下来，按照要求填写添加到`Secrets`中，如若选填内容不想配置，需将该行删除。如只想基本功能，无需通知和用积分抽奖，应填写如下内容：
-
-```json
-[
-    {
-        "username": "18566669999",
-        "password": "123456",
-        "appId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    }
-]
-```
-
-注意`json`格式，最后一个要删掉逗号。建议在填写之前，使用[json校验工具](https://www.bejson.com/)进行校验。
-
-注意：不要将个人信息填写到仓库`config.json`文件中（不要动这个文件就没事），以免泄露。
-
-多账号，参考[关于多账号的使用方式](https://github.com/srcrs/UnicomTask/discussions/16)
-
-![](https://draw-static.vercel.app/UnicomTask/将参数填到Secrets中.gif)
-
-### 4.开启Actions
-
-默认`Actions`处于禁止状态，在`Actions`选项中开启`Actions`功能，把那个绿色的长按钮点一下。如果看到左侧工作流上有黄色`!`号，还需继续开启。
-
-![](https://draw-static.vercel.app/UnicomTask/开启Actions.gif)
-
-### 5.进行一次push操作
-
-`push`操作会触发工作流运行。
-
-删除掉`README.md`中的😄即可。完成后，每天早上`7:30`将自动完成每日任务。
-
-![](https://draw-static.vercel.app/UnicomTask/进行一次push操作.gif)
 
 ## 腾讯云函数（推荐）
 
