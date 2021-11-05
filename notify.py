@@ -60,7 +60,7 @@ def sendEmail(email):
             #这里不知道为什么，在很多情况下返回的不是 json，
             # 但在测试过程中成功率极高,因此直接输出
     except Exception as e:
-        print('邮件推送异常，原因为: ' + str(e))
+        print('邮件推送异常，原因: ' + str(e))
         print(traceback.format_exc())
 
 #钉钉群自定义机器人推送
@@ -83,7 +83,7 @@ def sendDing(webhook):
         res = res.json()
         print('dinngTalk push : ' + res['errmsg'])
     except Exception as e:
-        print('钉钉机器人推送异常，原因为: ' + str(e))
+        print('钉钉机器人推送异常，原因: ' + str(e))
         print(traceback.format_exc())
 
 #发送Tg通知
@@ -106,7 +106,7 @@ def sendTg(tgBot):
         resp = session.post(url)
         print(resp)
     except Exception as e:
-        print('Tg通知推送异常，原因为: ' + str(e))
+        print('Tg通知推送异常，原因: ' + str(e))
         print(traceback.format_exc())
 
 #发送push+通知
@@ -124,7 +124,7 @@ def sendPushplus(token):
         resp = requests.post(url, data=body, headers=headers)
         print(resp)
     except Exception as e:
-        print('push+通知推送异常，原因为: ' + str(e))
+        print('push+通知推送异常，原因: ' + str(e))
         print(traceback.format_exc())
 
 #企业微信通知，普通微信可接收
