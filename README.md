@@ -1,12 +1,5 @@
 <div align="center">
 <h1 align="center">UniTask</h1>
-<img src="https://img.shields.io/github/issues/srcrs/UnicomTask?color=green">
-<img src="https://img.shields.io/github/stars/srcrs/UnicomTask?color=yellow">
-<img src="https://img.shields.io/github/forks/srcrs/UnicomTask?color=orange">
-<img src="https://img.shields.io/github/license/srcrs/UnicomTask?color=ff69b4">
-<img src="https://img.shields.io/github/search/srcrs/UnicomTask/main?color=blue">
-<img src="https://img.shields.io/github/v/release/srcrs/UnicomTask?color=blueviolet">
-<img src="https://img.shields.io/github/languages/code-size/srcrs/UnicomTask?color=critical">
 </div>
 
 # 简介
@@ -55,7 +48,6 @@
 
 ### 1.fork本项目
 
-项目地址：[srcrs/UnicomTask](https://github.com/srcrs/UnicomTask)
 
 ### 2.准备需要的参数
 
